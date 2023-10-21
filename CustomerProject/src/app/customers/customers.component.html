@@ -1,0 +1,35 @@
+<html>
+<body>
+    <h1>Customers</h1>
+    <button style='font-size:18px' (click)="addCustomer()">Add a Customer</button>
+<table>
+    <tr>
+      <th>CustomerId</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Phone_Number</th>
+      <th>Country_code</th>
+      <th>Gender</th>
+      <th>Balance</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let item of customerList">
+      <td>{{item.id}}</td>
+      <td>{{item.firstname}}</td>
+      <td>{{item.lastname}}</td>
+      <td><a href=mailto:“{{item.email}}”>{{item.email}}</a></td>
+      <td>{{item.phone_Number}}</td>
+      <td>{{item.country_code}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.currency}} {{item.balance}}</td>
+      <td><button style='font-size:18px' (click)="editCustomer(item.id)">Edit</button></td>
+      <td><button style='font-size:18px' (click)="deleteCustomer(item.id)">Delete</button></td>
+    </tr>
+  </table>
+  
+  </body>
+  </html>
+  
+  
